@@ -25,8 +25,8 @@
         NSLog(@"String in square brackets is %@",sqExp);
         /*NSRange newRange = NSMakeRange(0, closeSq.location+1);
         NSString* newStr = [str substringWithRange:newRange];
-        NSRange r = NSMakeRange(closeSq.location+1, str.length-newStr.length);
-        NSString* subStr = [str substringWithRange:r]; */
+        NSRange r = NSMakeRange(closeSq.location+1, str.length-newStr.length); //drop string
+        NSString* subStr = [str substringWithRange:r];  */
     };
     void(^tagBlock)(NSString*)= ^(NSString* str){
         NSRange openTag = [str rangeOfString:@"<"];
@@ -41,7 +41,6 @@
         NSRange sqExpression = NSMakeRange(openPar.location + 1, closePar.location-openPar.location-1);
         NSString* sqExp = [str substringWithRange:sqExpression];
         NSLog(@"String in round brackets is %@",sqExp);
-        
     };
 
     
